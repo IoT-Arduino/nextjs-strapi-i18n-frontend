@@ -3,7 +3,27 @@ import { useRouter } from "next/router";
 
 function Page({ content }) {
   const router = useRouter();
+  const { locale } = router;
 
+  const changeLanguage = (e) => {
+    const locale = e.target.value;
+    console.log(content.localizations[0].id);
+    console.log(content.localizations[1].id);
+    console.log(content.localizations);
+    console.log(locale);
+
+    // localizations.locale の値とlocaleの値が同じオブジェクトのIDを取得する
+    const targetId = undefined;
+    targetId = content.localizations[1].id;
+
+    if (locale === "en-US") {
+      router.push(`/${targetId}`, `/${targetId}`, { locale });
+    } else if (locale === "zh-CN") {
+      router.push(`/${targetId}`, `/${targetId}`, { locale });
+    } else {
+      router.push(`/${targetId}`, `/${targetId}`, { locale });
+    }
+  };
 
   return (
     <div className="container">
@@ -12,17 +32,26 @@ function Page({ content }) {
       <div className="body">{content.body}</div>
 
       <hr />
-      <hr />
+
+      <select onChange={changeLanguage} defaultValue={locale}>
+        <option value="en-US">English</option>
+        <option value="ja-JP">日本語</option>
+        <option value="zh-CN">Chinese</option>
+      </select>
+
+      {/*
       <Link
         href={router.asPath}
-        // href={`/${content.localizations[0].id}`}
         locale={router.locale === "ja-JP" ? "en-US" : "ja-JP"}
       >
         <a>
-          {router.locale === "ja-JP" ? "Show English Translation" : "日本語"}
+          {router.locale === "ja-JP" ? "Show English Translation" : "日本語ページへ"}
         </a>
       </Link>
-      <div>{router.locale}</div>
+      */}
+
+      <hr />
+
       <Link href="/">Back to Home</Link>
     </div>
   );
@@ -30,25 +59,23 @@ function Page({ content }) {
 
 export const getServerSideProps = async (context) => {
   const { id } = context.params;
-  const { locale } = context;
-
-  console.log(context)
+  // const { locale } = context;
 
   let translation = undefined;
 
   const initialRes = await fetch(`http://localhost:1337/pages/${id}`);
   const initial = await initialRes.json();
 
-  if (locale === "en-US") {
-    const translationRes = await fetch(
-      `http://localhost:1337/pages/${initial.localizations[0].id}`
-    );
-    const translation = await translationRes.json();
-  }
+  // if (locale === "en-US") {
+  //   const translationRes = await fetch(
+  //     `http://localhost:1337/pages/${initial.localizations[0].id}`
+  //   );
+  //   const translation = await translationRes.json();
+  // }
 
   return {
     props: {
-      content: translation ? translationn : initial,
+      content: initial,
     },
   };
 };
