@@ -7,14 +7,13 @@ function Page({ content }) {
 
   const changeLanguage = (e) => {
     const locale = e.target.value;
-    console.log(content.localizations[0].id);
-    console.log(content.localizations[1].id);
-    console.log(content.localizations);
-    console.log(locale);
 
     // localizations.locale の値とlocaleの値が同じオブジェクトのIDを取得する
     const targetId = undefined;
-    targetId = content.localizations[1].id;
+    const fileterdData = content.localizations.filter((item) => {
+      return item.locale !== "en" ? item.locale === locale : locale === "en-US";
+    });
+    targetId = fileterdData[0].id;
 
     if (locale === "en-US") {
       router.push(`/${targetId}`, `/${targetId}`, { locale });
@@ -39,17 +38,6 @@ function Page({ content }) {
         <option value="zh-CN">Chinese</option>
       </select>
 
-      {/*
-      <Link
-        href={router.asPath}
-        locale={router.locale === "ja-JP" ? "en-US" : "ja-JP"}
-      >
-        <a>
-          {router.locale === "ja-JP" ? "Show English Translation" : "日本語ページへ"}
-        </a>
-      </Link>
-      */}
-
       <hr />
 
       <Link href="/">Back to Home</Link>
@@ -59,7 +47,6 @@ function Page({ content }) {
 
 export const getServerSideProps = async (context) => {
   const { id } = context.params;
-  // const { locale } = context;
 
   let translation = undefined;
 

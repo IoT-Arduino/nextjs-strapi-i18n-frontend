@@ -63,6 +63,8 @@ export default function Home({ content }) {
           );
         })}
 
+        <hr />
+
         <div className={styles.grid}>
           <Link href="/about">
             <a>About Page</a>
