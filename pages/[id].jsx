@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
+import Layout from "@/components/Layout.js";
 
 function Page({ content }) {
   const router = useRouter();
@@ -25,23 +26,19 @@ function Page({ content }) {
   };
 
   return (
-    <div className="container">
+    <Layout content={content}>
       <h2>{content.title}</h2>
-
       <div className="body">{content.body}</div>
 
-      <hr />
-
+      {/* 
       <select onChange={changeLanguage} defaultValue={locale}>
         <option value="en-US">English</option>
         <option value="ja-JP">日本語</option>
         <option value="zh-CN">Chinese</option>
       </select>
+      */}
 
-      <hr />
-
-      <Link href="/">Back to Home</Link>
-    </div>
+    </Layout>
   );
 }
 

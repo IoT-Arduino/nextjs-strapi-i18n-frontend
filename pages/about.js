@@ -3,6 +3,8 @@ import jp from "../locales/jp";
 import cn from "../locales/cn";
 import { useRouter } from "next/router";
 
+import Layout from "@/components/Layout.js";
+
 export default function About() {
   const router = useRouter();
   const { locale } = router;
@@ -18,9 +20,9 @@ export default function About() {
   }
 
   return (
-    <div>
-      This is about Page
+    <Layout title={t.about}>
+      <h3>{t.about}</h3>
       <p>{t.description}</p>
-    </div>
+    </Layout>
   );
 }
