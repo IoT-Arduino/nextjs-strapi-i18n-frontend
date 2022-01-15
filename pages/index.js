@@ -28,12 +28,6 @@ export default function Home({ content }) {
     t = jp;
   }
 
-  // const changeLanguage = (e) => {
-  //   const locale = e.target.value;
-  //   router.push("/", "/", { locale });
-  // };
-
-
   return (
     <Layout>
       <Head>
@@ -44,16 +38,6 @@ export default function Home({ content }) {
 
       <main className={styles.main}>
         <h1 className={styles.title}>{t.hero}</h1>
-
-        {/* 
-
-        <select onChange={changeLanguage} defaultValue={locale}>
-          <option value="en-US">English</option>
-          <option value="ja-JP">日本語</option>
-          <option value="zh-CN">Chinese</option>
-        </select>
-
-        */}
 
         <p className={styles.description}>
           {t.subtitle}
