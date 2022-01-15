@@ -59,6 +59,8 @@ export default function Home({ content }) {
           {t.subtitle}
         </p>
 
+        <h3>{t.newsPickup}</h3>
+
         {content.map((item, i) => {
           return (
             <Link key={i} href={`/news/${item.id}`}>

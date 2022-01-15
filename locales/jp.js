@@ -9,6 +9,8 @@ export default {
   button: `取得する`,
   about: "私たちについて",
   news: "ニュース",
+  newsPickup: "注目ニュース",
+  newsList: "ニュース一覧",
   science: "科学",
   research: "リサーチ",
   search: "検索",

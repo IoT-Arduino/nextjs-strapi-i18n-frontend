@@ -29,7 +29,7 @@ export default function news({ content }) {
   return (
     <Layout>
       <main className={styles.main}>
-        <h1>{t.news}</h1>
+        <h1>{t.newsList}</h1>
 
         {content.map((item, i) => {
           return (

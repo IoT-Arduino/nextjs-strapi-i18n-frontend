@@ -9,6 +9,8 @@ export default {
   button: `Got it!`,
   about: "About Us",
   news: "News",
+  newsPickup: "Pickup News",
+  newsList: "News List",
   science: "Science",
   research: "Research",
   search: "Search",

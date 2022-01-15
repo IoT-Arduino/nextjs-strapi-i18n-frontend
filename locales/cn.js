@@ -9,6 +9,8 @@ export default {
   button: `获取`,
   about: "关于我们",
   news: "新闻",
+  newsPickup: "精选新闻",
+  newsList: "新闻列表",
   science: "科学",
   research: "研究",
   search: "搜索",
