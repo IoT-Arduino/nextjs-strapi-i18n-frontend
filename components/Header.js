@@ -1,6 +1,6 @@
-import en from "../locales/en";
-import jp from "../locales/jp";
-import cn from "../locales/cn";
+import en from "./../locales/en";
+import jp from "./../locales/jp";
+import cn from "./../locales/cn";
 
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -36,11 +36,11 @@ export default function Header({ content }) {
       targetId = fileterdData[0].id;
 
       if (locale === "en-US") {
-        router.push(`/${targetId}`, `/${targetId}`, { locale });
+        router.push(`/news/${targetId}`, `/news/${targetId}`, { locale });
       } else if (locale === "zh-CN") {
-        router.push(`/${targetId}`, `/${targetId}`, { locale });
+        router.push(`/news/${targetId}`, `/news/${targetId}`, { locale });
       } else {
-        router.push(`/${targetId}`, `/${targetId}`, { locale });
+        router.push(`/news/${targetId}`, `/news/${targetId}`, { locale });
       }
     }
   };
@@ -56,7 +56,7 @@ export default function Header({ content }) {
       <nav>
         <ul>
           <li>
-            <Link href="/">
+            <Link href="/news">
               <a>{t.news}</a>
             </Link>
           </li>

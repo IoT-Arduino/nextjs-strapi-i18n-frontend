@@ -28,10 +28,10 @@ export default function Home({ content }) {
     t = jp;
   }
 
-  const changeLanguage = (e) => {
-    const locale = e.target.value;
-    router.push("/", "/", { locale });
-  };
+  // const changeLanguage = (e) => {
+  //   const locale = e.target.value;
+  //   router.push("/", "/", { locale });
+  // };
 
 
   return (
@@ -56,13 +56,12 @@ export default function Home({ content }) {
         */}
 
         <p className={styles.description}>
-          Get started by editing{" "}
-          <code className={styles.code}>pages/index.js</code>
+          {t.subtitle}
         </p>
 
         {content.map((item, i) => {
           return (
-            <Link key={i} href={`/${item.id}`}>
+            <Link key={i} href={`/news/${item.id}`}>
               <a>{item.title}</a>
             </Link>
           );

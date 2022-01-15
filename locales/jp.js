@@ -1,5 +1,6 @@
 export default {
-  subtitle: "科学の加速",
+  subtitle:
+    "NextJSとStrapi（HeadlessCMS）をつかった多言語サイトテンプレート。メニューバー、コンテンツ一覧、コンテンツ詳細ページ等すべてが多言語化されています。",
   signin: "サインイン",
   directory: "ディレクトリ",
   hero: "NextJS&HeadlessCMS多言語サイト",

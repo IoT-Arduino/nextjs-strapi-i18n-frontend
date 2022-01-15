@@ -1,5 +1,6 @@
 export default {
-  subtitle: "Accelerating science",
+  subtitle:
+    "Multilingual site template using NextJS and Strapi (HeadlessCMS). The menu bar, contents list, contents detail page, etc. are all multilingual.",
   signin: "Sign In",
   directory: "Directory",
   hero: "NextJS&HeadlessCMS Multilingual Site",

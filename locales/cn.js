@@ -1,5 +1,6 @@
 export default {
-  subtitle: "加速科学的发展",
+  subtitle:
+    "使用NextJS和Strapi（HeadlessCMS）的多语言网站模板。 菜单栏、内容列表、内容详情页等都是多语种的。",
   signin: "登录",
   directory: "指南",
   hero: "NextJS&HeadlessCMS多语言网站",
