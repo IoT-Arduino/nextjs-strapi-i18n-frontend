@@ -3,4 +3,5 @@
   max-width: 960px;
   padding: 0 30px;
   word-break:break-all;
+  min-height: 60vh;
 }

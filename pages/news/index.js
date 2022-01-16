@@ -2,14 +2,16 @@ import en from "@/locales/en";
 import jp from "@/locales/jp";
 import cn from "@/locales/cn";
 
-import { useState } from "react";
+import { API_URL } from "@/config/index";
+
+// import { useState } from "react";
 import { useRouter } from "next/router";
 
 import Link from "next/link";
 
-import Head from "next/head";
+// import Head from "next/head";
 import Layout from "@/components/Layout.js";
-import Image from "next/image";
+// import Image from "next/image";
 import styles from "@/styles/Home.module.css";
 
 export default function news({ content }) {
@@ -39,7 +41,6 @@ export default function news({ content }) {
           );
         })}
 
-        <hr />
       </main>
     </Layout>
   );
@@ -48,7 +49,7 @@ export default function news({ content }) {
 export const getServerSideProps = async (context) => {
   const { locale } = context;
 
-  const initialRes = await fetch(`http://localhost:1337/pages`);
+  const initialRes = await fetch(`${API_URL}/pages`);
   const initial = await initialRes.json();
 
   // initial -> get localizasions.id for each language
@@ -73,7 +74,7 @@ export const getServerSideProps = async (context) => {
 
     await Promise.all(
       translationId.map(async (item, i) => {
-        translationRes = await fetch(`http://localhost:1337/pages/${item}`);
+        translationRes = await fetch(`${API_URL}/pages/${item}`);
         const translationData = await translationRes.json();
         translation.push(translationData);
         return translation;
