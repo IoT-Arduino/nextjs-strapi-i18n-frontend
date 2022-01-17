@@ -4,14 +4,9 @@ import cn from "../locales/cn";
 
 import { API_URL } from "@/config/index";
 
-// import { useState } from "react";
 import { useRouter } from "next/router";
-
 import Link from "next/link";
-
-import Head from "next/head";
 import Layout from "@/components/Layout.js";
-// import Image from "next/image";
 import styles from "../styles/Home.module.css";
 
 export default function Home({ content }) {
