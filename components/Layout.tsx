@@ -1,11 +1,11 @@
 import Head from "next/head";
-import { useRouter } from "next/router";
 import Header from "./Header";
 import Footer from "./Footer";
-import styles from "@/styles/Layout.module.css";
+import styles from "../styles/Layout.module.css";
 
-export default function Layout({ title, keywords, description,content, children }) {
-    const router = useRouter();
+import { PropsLayout } from '../types/type'
+
+const Layout = ({ title, keywords, description,content, children }:PropsLayout) => {
 
   return (
     <div>
@@ -20,3 +20,5 @@ export default function Layout({ title, keywords, description,content, children 
     </div>
   );
 }
+
+export default  Layout

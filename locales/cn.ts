@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/no-anonymous-default-export
 export default {
   subtitle:
     "使用NextJS和Strapi（HeadlessCMS）的多语言网站模板。 菜单栏、内容列表、内容详情页等都是多语种的。",

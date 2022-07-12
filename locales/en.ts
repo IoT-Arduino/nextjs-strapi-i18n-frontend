@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/no-anonymous-default-export
 export default {
   subtitle:
     "Multilingual site template using NextJS and Strapi (HeadlessCMS). The menu bar, contents list, contents detail page, etc. are all multilingual.",

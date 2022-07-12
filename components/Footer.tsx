@@ -2,15 +2,17 @@ import en from "../locales/en";
 import jp from "../locales/jp";
 import cn from "../locales/cn";
 
-import Link from "next/link";
 import { useRouter } from "next/router";
-import styles from "@/styles/Footer.module.css";
+import styles from "../styles/Footer.module.css";
+import Link from "next/link";
 
-export default function Footer({ content }) {
+import { Tr } from '../types/type'
+
+export default function Footer() {
   const router = useRouter();
   const { locale } = router;
 
-  let t;
+  let t: Tr
 
   if (locale === "en-US") {
     t = en;

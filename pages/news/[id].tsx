@@ -1,11 +1,11 @@
-import Layout from "@/components/Layout.js";
+import Layout from "../../components/Layout";
 
-import { API_URL } from "@/config/index";
+import { API_URL } from "../../config/index";
 
 function Page({ content }) {
 
   return (
-    <Layout content={content}>
+    <Layout title={content.title} content={content}>
       <h2>{content.title}</h2>
       <div className="body">{content.body}</div>
     </Layout>

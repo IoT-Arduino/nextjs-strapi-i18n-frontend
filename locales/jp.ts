@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/no-anonymous-default-export
 export default {
   subtitle:
     "NextJSとStrapi（HeadlessCMS）をつかった多言語サイトテンプレート。メニューバー、コンテンツ一覧、コンテンツ詳細ページ等すべてが多言語化されています。",
