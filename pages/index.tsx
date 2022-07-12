@@ -81,8 +81,6 @@ export const getServerSideProps = async (context: { locale: string }) => {
       translationId.map(async (item: number) => {
         const translationRes = await fetch(`${API_URL}/pages/${item}`);
         const translationData = await translationRes.json();
-        // translation.push(translationData);
-
         translation = [...translation,translationData]
 
         return translation;
