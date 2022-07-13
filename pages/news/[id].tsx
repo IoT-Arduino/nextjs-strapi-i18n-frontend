@@ -1,5 +1,4 @@
 import Layout from '../../components/Layout'
-
 import { API_URL } from '../../config/index'
 
 function Page({ content }) {

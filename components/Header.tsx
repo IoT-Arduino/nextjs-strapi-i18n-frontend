@@ -1,26 +1,14 @@
-import en from './../locales/en'
-import jp from './../locales/jp'
-import cn from './../locales/cn'
-
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import styles from '../styles/Header.module.css'
 
-import { Tr } from '../types/type'
+import { useTranslationDetect } from '../hooks/useTranslationDetect'
 
-export default function Header({ content }) {
+const Header = ({ content }) => {
   const router = useRouter()
   const { locale } = router
 
-  let t: Tr
-
-  if (locale === 'en-US') {
-    t = en
-  } else if (locale === 'zh-CN') {
-    t = cn
-  } else {
-    t = jp
-  }
+  const t = useTranslationDetect(locale)
 
   const changeLanguage = (e: { target: { value: string } }) => {
     const locale = e.target.value
@@ -71,3 +59,5 @@ export default function Header({ content }) {
     </header>
   )
 }
+
+export default Header

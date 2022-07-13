@@ -32,7 +32,7 @@ export type Localizations = {
 }
 
 export type NewsResponse = {
-    id:string;
+    id:number;
     title:string;
     body:string;
     locale:string;
